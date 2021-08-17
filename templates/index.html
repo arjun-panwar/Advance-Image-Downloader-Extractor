@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Image Scrapper</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Image Scrapper</h1>
+<div class="container">
+            <div class="row">
+
+
+                    <div class="col-md-12 col-sm-12" style="margin-top: 50px;">
+
+
+
+                            <div style="margin-center:30px;" class="row mt-2">
+
+
+
+
+                        <div style="margin-center:60px;" class="col-md">
+
+                            <div class="modal-dialog">
+    <div class="modal-content">
+
+                <div class="form">
+
+                    <form method="POST" enctype="multipart/form-data" action="/submit">
+                        <fieldset>
+                        <span class="error"></span>
+                        <div class="form-group">
+                            <label for="name"></label><span class="error"></span>
+                            <input type="text" class="form-control" id="name" required="" aria-describedby="emailHelp" name="name" placeholder="Name">
+
+
+                            <label for="Email"> </label>
+                            <input type="text" class="form-control" id="email" required="" aria-describedby="emailHelp" name="email" placeholder="Email">
+
+                            <label for="count"> </label>
+                            <input type="text" class="form-control" id="count" required="" aria-describedby="emailHelp" name="count" placeholder="No. of images"></div>
+                         <label for="Time"></label>
+                            <input type="datetime-local" class="form-control" id="time" required="" aria-describedby="emailHelp" name="time" placeholder="Time"></div>
+
+                        <div class="modal-footer">
+                            <input type="Reset" value="Reset" class="btn btn-danger">
+                            <input class="btn btn-success" type="submit" name="submit" value="SUBMIT ">
+
+                        </div>
+
+                </fieldset></form></div>
+                </div>
+                                  </div>
+
+                    </div>
+                    </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

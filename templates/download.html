@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+}
+</style>
+<title>Image Scrapper</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Image Scrapper</h1>
+    <h3 style="text-align: center"><a href="{{ link }}">Download</a></h3>
+
+
+
+
+</div>
+{% endblock %}
