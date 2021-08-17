@@ -29,7 +29,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "365726132140.dkr.ecr.us-east-2.amazonaws.com/imagescrapper",
+      "image": "365726132140.dkr.ecr.us-east-2.amazonaws.com/imagescrapper-repo",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "imagescrapper"
+      "name": "imagescrapper-repo"
     }
   ],
   "placementConstraints": [],
@@ -56,8 +56,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:365726132140:task-definition/imagescrapingtask2:1",
-  "family": "imagescrapingtask2",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:365726132140:task-definition/imagescrapper-task:1",
+  "family": "imagescrapper-task",
   "requiresAttributes": [
     {
       "targetId": null,
