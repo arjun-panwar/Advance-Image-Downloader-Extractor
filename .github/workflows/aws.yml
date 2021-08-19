@@ -55,7 +55,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: imagescrapper-repo
+        ECR_REPOSITORY: scrap-repo
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -76,13 +76,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: aws-task-definition.json
-        container-name: imagescrapper-repo
+        container-name: scrap-repo
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: imagescrapper-service
-        cluster: imagescrapper-cluster
+        service: scrap-service
+        cluster: scrap-cluster
         wait-for-service-stability: true
