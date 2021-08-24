@@ -1,6 +1,7 @@
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 #import logger
+import os
 from logger import App_Logger
 
 
