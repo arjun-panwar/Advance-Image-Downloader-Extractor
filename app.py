@@ -40,7 +40,6 @@ def submit():
             ob = cassandra("user_data")
             now = datetime.now()
             time=datetime.strptime(time, '%Y-%m-%dT%H:%M').strftime("%Y-%m-%d %H:%M")
-
             try:
                 ob.insert(
                     "user",

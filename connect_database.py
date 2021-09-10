@@ -1,7 +1,6 @@
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 #import logger
-import os
 from logger import App_Logger
 
 
@@ -18,7 +17,8 @@ class cassandra:
         self.logger = App_Logger("static/imagescrapper.log")  # creating App_Logger object
         cloud_config = {"secure_connect_bundle": "secure-connect-image-scrapper.zip"}
         auth_provider = PlainTextAuthProvider(
-            os.environ['CASSANDRA_USERNAME'],os.environ['CASSANDRA_PASSWORD'],
+            "gpJgkOAuHfZBaiwtkZiTBInR",
+            "-DeDEiUWk2,5tQrBZGrZuiYSqUaLUifZsFdNos2ual+D01CAMfg,A_FGScwC1l-_+PTugfOs0X3EIvHF4Az_ZZ2eRytKoptf6f0u7r2U8,9wTbTKfSZnuA452tlUiSvi",
         )
         self.cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
         self.session = self.cluster.connect(keyspace)
