@@ -1,7 +1,7 @@
 #FROM continuumio/anaconda3:4.4.0
 # Use the official Python image.
 # https://hub.docker.com/_/python
-FROM python:3.7-slim
+FROM python:3.7
 
 # Install manually all the missing libraries
 RUN apt-get update
