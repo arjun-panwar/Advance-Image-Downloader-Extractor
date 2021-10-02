@@ -2,7 +2,7 @@ from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 #import logger
 from logger import App_Logger
-
+import os
 
 class cassandra:
     """
@@ -16,10 +16,7 @@ class cassandra:
     def __init__(self, keyspace):
         self.logger = App_Logger("static/imagescrapper.log")  # creating App_Logger object
         cloud_config = {"secure_connect_bundle": "secure-connect-image-scrapper.zip"}
-        auth_provider = PlainTextAuthProvider(
-            "gpJgkOAuHfZBaiwtkZiTBInR",
-            "-DeDEiUWk2,5tQrBZGrZuiYSqUaLUifZsFdNos2ual+D01CAMfg,A_FGScwC1l-_+PTugfOs0X3EIvHF4Az_ZZ2eRytKoptf6f0u7r2U8,9wTbTKfSZnuA452tlUiSvi",
-        )
+        auth_provider = PlainTextAuthProvider(os.environ['cassandra_id'], os.environ['cassandra_secret'])
         self.cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
         self.session = self.cluster.connect(keyspace)
         row = self.session.execute("select release_version from system.local").one()
@@ -169,18 +166,3 @@ class cassandra:
             return False
 
 
-# ob=cassandra("user_data")
-# from datetime import datetime
-# import json
-
-# now = datetime.now()
-#ob.execute("drop table logs;")
-#ob.create_table("logs","time text,type text,log_message text,email text,primary key (time)")
-# ob.insert('logs',"time,type,log_message,email",f"'{now}','warning','App started','admin@ineuron.ai'")
-# rows=ob.select("logs","*")
-# print(json.dumps(rows, indent=4 ,ensure_ascii=False))
-# print(json.dumps( [dict(ix) for ix in rows] ))
-# j=[{str(i)[4:-1].replace("=","':").replace(",",",'")} for i in rows]
-# print("j")
-# for a in rows:
-#   print(a)
