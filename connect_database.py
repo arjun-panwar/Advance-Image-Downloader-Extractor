@@ -16,7 +16,7 @@ class cassandra:
     def __init__(self, keyspace):
         self.logger = App_Logger("static/imagescrapper.log")  # creating App_Logger object
         cloud_config = {"secure_connect_bundle": "secure-connect-image-scrapper.zip"}
-        auth_provider = PlainTextAuthProvider(os.environ['cassandra_id'], os.environ['cassandra_secret'])
+        auth_provider = PlainTextAuthProvider(os.environ['CASSANDRA_USERNAME'], os.environ['CASSANDRA_PASSWORD'])
         self.cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
         self.session = self.cluster.connect(keyspace)
         row = self.session.execute("select release_version from system.local").one()
