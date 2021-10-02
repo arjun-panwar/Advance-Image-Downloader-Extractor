@@ -11,7 +11,7 @@ logger.log("info", "Start")  # logging
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])  # route to display the home page
+@app.route("/", methods=["GET","POST"])  # route to display the home page
 @cross_origin()
 def homePage():
     """
@@ -57,7 +57,7 @@ def submit():
     except Exception as e:
         logger.log("error", f"Submition error--{str(e)}")
         return render_template(
-            "submit.html", link=link, message="Try again, Request submision error "+str(e)
+            "submit.html", message="Try again, Request submision error "+str(e)
         )
 
 
