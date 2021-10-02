@@ -26,10 +26,10 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": 600,
+      "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "365726132140.dkr.ecr.us-east-2.amazonaws.com/scrap-repo",
+      "image": "214606762286.dkr.ecr.us-east-2.amazonaws.com/imagescrap-ecr",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "scrap-repo"
+      "name": "imagescrap-ecr"
     }
   ],
   "placementConstraints": [],
@@ -56,8 +56,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:365726132140:task-definition/scrap-task:1",
-  "family": "scrap-task",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:214606762286:task-definition/imagescrap-task:1",
+  "family": "imagescrap-task",
   "requiresAttributes": [
     {
       "targetId": null,
