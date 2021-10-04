@@ -22,6 +22,7 @@ class Image_scrapper:
         self.logger = App_Logger("static/imagescrapper.log")  # creating App_Logger object
         try:
             self.logger.log("info", "creating webdriver")
+            os.chmod('./chromedriver', 0755)
             chrome_options = webdriver.ChromeOptions()
             chrome_options.add_argument("--headless")
             chrome_options.add_argument("--disable-gpu")
