@@ -29,7 +29,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "214606762286.dkr.ecr.us-east-2.amazonaws.com/imagescrap-ecr",
+      "image": "214606762286.dkr.ecr.us-east-2.amazonaws.com/imagescrapi-ecr",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "imagescrap-ecr"
+      "name": "imagescrapi-ecr"
     }
   ],
   "placementConstraints": [],
@@ -56,8 +56,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:214606762286:task-definition/imagescrap-task:1",
-  "family": "imagescrap-task",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-2:214606762286:task-definition/imagescrapi-task:1",
+  "family": "imagescrapi-task",
   "requiresAttributes": [
     {
       "targetId": null,
